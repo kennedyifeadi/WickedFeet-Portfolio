@@ -22,7 +22,7 @@ export const Nav = () => {
         <nav
             className={`w-full fixed top-0 z-50 transition-colors duration-300 ${scrolled ? "bg-white" : "bg-transparent"}`}
         >
-            <div className="flex items-center justify-between px-4 md:px-8 py-2">
+            <div className="flex items-center justify-between px-4 md:px-8 py-4">
                 <div
                     style={{ fontFamily: "'Oswald', sans-serif" }}
                     className={`text-2xl ${scrolled ? "text-[#0D0D0D]" : "text-white"}`}

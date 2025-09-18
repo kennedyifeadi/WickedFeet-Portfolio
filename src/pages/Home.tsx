@@ -11,10 +11,10 @@ import { useScroll } from "framer-motion"
 const Home = () => {
   const container = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
-    target: container, 
+    target: container,
     offset: ["start start", "end end"]
   })
-  useEffect(()=>{
+  useEffect(() => {
     const lenis = new Lenis()
 
     function raf(time: number) {
@@ -25,10 +25,10 @@ const Home = () => {
     requestAnimationFrame(raf)
   }, [])
   return (
-    <div  className="relative h-[500vh] bg-[#1A1A1A]">
+    <div className="relative h-[500vh] bg-[#1A1A1A]">
       <div ref={container} className="relative h-[200vh]">
-              <Landing scrollYProgress={scrollYProgress} />
-      <AboutMe scrollYProgress={scrollYProgress} />
+        <Landing scrollYProgress={scrollYProgress} />
+        <AboutMe />
       </div>
       <Services />
       <Performance />

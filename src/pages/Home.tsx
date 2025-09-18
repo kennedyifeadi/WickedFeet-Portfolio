@@ -25,9 +25,11 @@ const Home = () => {
     requestAnimationFrame(raf)
   }, [])
   return (
-    <div ref={container} className="relative h-[500vh]">
-      <Landing scrollYProgress={scrollYProgress} />
+    <div  className="relative h-[500vh] bg-[#1A1A1A]">
+      <div ref={container} className="relative h-[200vh]">
+              <Landing scrollYProgress={scrollYProgress} />
       <AboutMe scrollYProgress={scrollYProgress} />
+      </div>
       <Services />
       <Performance />
       <Contact />

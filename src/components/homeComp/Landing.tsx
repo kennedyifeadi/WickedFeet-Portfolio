@@ -1,7 +1,7 @@
 import { useTransform } from "framer-motion"
 import { motion } from "framer-motion"
 import type { MotionValue } from "framer-motion"
-import Dancer1 from "../../assets/dancer1.jpg"
+import Dancer1 from "../../assets/Dancer1.jpg"
 import image1 from "../../assets/Dancer2.jpg"
 import image2 from "../../assets/Dancer3.jpg"
 import image3 from "../../assets/Dancer4.jpg"

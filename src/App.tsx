@@ -1,13 +1,13 @@
+import { BrowserRouter } from "react-router-dom"
+import { AppRoute } from "./routes/AppRoute"
 
 
 function App() {
 
   return (
-    <>
-      <div className="text-3xl font-bold underline">
-        WICKEDFEET
-      </div>
-    </>
+    <BrowserRouter>
+    <AppRoute />
+    </BrowserRouter>
   )
 }
 

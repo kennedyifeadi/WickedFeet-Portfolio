@@ -1,6 +1,9 @@
+import withMainLayout from "../layout/MainLayout"
 
-export const About = () => {
+const About = () => {
   return (
     <div>About</div>
   )
 }
+
+export default withMainLayout(About)

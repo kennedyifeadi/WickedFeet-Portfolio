@@ -1,6 +1,38 @@
+import { useEffect, useRef } from "react"
+import withMainLayout from "../layout/MainLayout"
+import Lenis from "lenis"
+import { Landing } from "../components/homeComp/Landing"
+import { Services } from "../components/homeComp/Services"
+import { Performance } from "../components/homeComp/Performance"
+import { Contact } from "../components/homeComp/Contact"
+import { AboutMe } from "../components/homeComp/AboutMe"
+import { useScroll } from "framer-motion"
 
-export const Home = () => {
+const Home = () => {
+  const container = useRef<HTMLDivElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: container, 
+    offset: ["start start", "end end"]
+  })
+  useEffect(()=>{
+    const lenis = new Lenis()
+
+    function raf(time: number) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+
+    requestAnimationFrame(raf)
+  }, [])
   return (
-    <div>Home</div>
+    <div ref={container} className="relative h-[500vh]">
+      <Landing scrollYProgress={scrollYProgress} />
+      <AboutMe scrollYProgress={scrollYProgress} />
+      <Services />
+      <Performance />
+      <Contact />
+    </div>
   )
 }
+
+export default withMainLayout(Home)

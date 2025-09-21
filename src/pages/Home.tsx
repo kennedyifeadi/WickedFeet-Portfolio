@@ -26,7 +26,7 @@ const Home = () => {
   }, [])
   return (
     <div className="relative h-max bg-[#1A1A1A]">
-      <div ref={container} className="relative md:h-[200dvh] h-[250dvh]">
+      <div ref={container} className="relative md:h-[200dvh] h-[200dvh]">
         <Landing scrollYProgress={scrollYProgress} />
         <AboutMe />
       </div>

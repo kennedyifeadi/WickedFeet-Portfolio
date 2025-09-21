@@ -11,7 +11,6 @@ import image5 from "../../assets/Dancer6.jpg"
 import ServiceVid from "../../assets/Dancervid2.mp4"
 import { FaPlay } from "react-icons/fa6";
 
-
 const rotatingImages = [
   Dancer1,
   image1,
@@ -20,6 +19,18 @@ const rotatingImages = [
   image4,
   image5,
 ]
+
+// Subtexts
+const SUBTEXTS = {
+  choreography:
+    "I design routines that balance creativity and precision, tailored to fit the mood and size of any stage — from intimate showcases to full productions.",
+  workshops:
+    "I run workshops where dancers of all levels sharpen technique, explore musicality, and build confidence — learning through connection and playful practice.",
+  performances:
+    "I deliver vibrant, story-driven performances that elevate events and leave audiences with memorable moments.",
+  collaborations:
+    "I collaborate with artists across disciplines to blend styles and create unique, boundary-pushing experiences."
+}
 
 export const Services = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -48,15 +59,16 @@ export const Services = () => {
   }
 
   return (
-    <section className="w-full bg-white px-6 h-[200dvh] flex flex-col">
+    <section className="w-full bg-white px-6 h-[120dvh] md:h-[200dvh] flex flex-col sticky">
       <h2 className="text-center text-3xl font-bold mb-10 uppercase">About My Services</h2>
 
-      <div className="flex flex-col gap-8 h-[95%]">
+      <div className="flex flex-col gap-2 md:gap-8 h-[95%]">
+        {/* Video block */}
         <div
-          className="relative rounded-xl overflow-hidden w-full h-[45%]"
+          className="relative rounded-xl overflow-hidden w-full md:h-[45%]"
           onMouseEnter={handlePlay}
           onMouseLeave={handlePause}
-          onClick={handlePlay} // for mobile
+          onClick={handlePlay} // for mobile tap
         >
           <video
             ref={videoRef}
@@ -78,16 +90,19 @@ export const Services = () => {
 
           {isPlaying && (
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
-              className="absolute inset-0 flex items-center justify-center text-white font-bold text-2xl bg-black/40"
+              className="absolute bottom-0 md:bottom-4 md:left-4 text-white bg-black/40 px-2 md:px-4 py-3 rounded-md max-w-lvh"
             >
-              Choreography
+              <h3 className="text-md md:text-3xl font-bold">Choreography</h3>
+              <p className="text-[10px] md:text-sm mt-2 leading-snug">{SUBTEXTS.choreography}</p>
             </motion.div>
           )}
         </div>
-        <div className="w-full h-[55%] flex gap-8">
-          <div className="relative rounded-xl overflow-hidden h-full flex-1">
+
+        {/* Image grid */}
+        <div className="w-full h-[55%] flex flex-col-reverse md:flex-row gap-2 md:gap-8">
+          <div className="relative rounded-xl overflow-hidden h-[60%] md:h-full flex-1">
             <motion.img
               key={currentIndex}
               src={rotatingImages[currentIndex]}
@@ -98,23 +113,32 @@ export const Services = () => {
               exit={{ opacity: 0 }}
               transition={{ duration: 1 }}
             />
-            <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-              <span className="text-white text-xl font-semibold">Workshops</span>
+            <div className="absolute inset-0 bg-black/30 flex items-end">
+              <div className="md:p-4 p-2 mb-2 md:mb-6 ">
+                <h4 className="text-white text-md md:text-3xl font-semibold">Workshops</h4>
+                <p className="text-white text-[10px] md:text-sm mt-1 leading-snug">{SUBTEXTS.workshops}</p>
+              </div>
             </div>
           </div>
-          <div className="flex flex-col gap-8 flex-1 h-full">
-            <div className="relative rounded-xl overflow-hidden h-1/2">
+
+          <div className="flex md:flex-col gap-2 md:gap-8 flex-1 h-[20%] md:h-full">
+            <div className="relative rounded-xl flex-1 overflow-hidden h-full md:h-1/2">
               <img src={image4} alt="Performance" className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                <span className="text-white text-lg font-semibold">Event Performances</span>
+              <div className="absolute inset-0 bg-black/30 flex items-end">
+                <div className="md:p-4 p-2 mb-2 md:mb-6 ">
+                  <h4 className="text-white text-md md:text-3xl font-semibold">Event Performances</h4>
+                  <p className="text-white text-[10px] md:text-sm mt-1 leading-snug">{SUBTEXTS.performances}</p>
+                </div>
               </div>
             </div>
 
-            {/* Right Bottom Static Image */}
-            <div className="relative rounded-xl overflow-hidden h-1/2">
+            <div className="relative rounded-xl flex-1 overflow-hidden h-full md:h-1/2">
               <img src={image5} alt="Collaboration" className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                <span className="text-white text-lg font-semibold">Collaborations</span>
+              <div className="absolute inset-0 bg-black/30 flex items-end">
+                <div className="md:p-4 p-2 mb-2 md:mb-6 ">
+                  <h4 className="text-white text-md md:text-3xl font-semibold">Collaborations</h4>
+                  <p className="text-white text-[10px] md:text-sm mt-1 leading-snug">{SUBTEXTS.collaborations}</p>
+                </div>
               </div>
             </div>
           </div>

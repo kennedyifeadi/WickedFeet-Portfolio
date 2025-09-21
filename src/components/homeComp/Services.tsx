@@ -48,7 +48,7 @@ export const Services = () => {
   }
 
   return (
-    <section className="w-full bg-white px-6 h-[150dvh] flex flex-col">
+    <section className="w-full bg-white px-6 h-[200dvh] flex flex-col">
       <h2 className="text-center text-3xl font-bold mb-10 uppercase">About My Services</h2>
 
       <div className="flex flex-col gap-8 h-[95%]">

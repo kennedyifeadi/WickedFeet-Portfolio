@@ -46,9 +46,7 @@ export const Nav = () => {
                                     const targetId = option.href.replace('#', '');
                                     const el = document.getElementById(targetId);
                                     if (el) {
-                                        const navHeight = document.querySelector('nav')?.offsetHeight || 0;
-                                        const y = el.getBoundingClientRect().top + window.pageYOffset - navHeight;
-                                        window.scrollTo({ top: y, behavior: 'smooth' });
+                                        window.scrollTo({behavior: 'smooth' });
                                     }
                                 }}
                             >
@@ -56,7 +54,8 @@ export const Nav = () => {
                             </a>
                         ))}
                     </div>
-                    <span
+                    <span 
+                        id="contact"
                         className={`py-2 px-4 flex justify-center items-center rounded-md bg-[#FFD166] font-medium text-white`}
                     >
                         Book Me

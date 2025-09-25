@@ -21,8 +21,28 @@ export const Landing = ({ scrollYProgress }: { scrollYProgress: MotionValue<numb
             <p className="text-[#CCCCCC]">Telling stories through dance</p>
           </div>
           <div className="flex gap-4 md:gap-8 justify-center w-full">
-            <span className="py-2 px-4 flex justify-center items-center rounded-md font-medium border-2 text-white">Book Me</span>
-            <span className="py-2 px-4 flex justify-center items-center rounded-md bg-[#FFD166] font-medium text-white">Watch Performance</span>
+            <a
+              onClick={e => {
+                e.preventDefault();
+                const option = { href: "#contact" };
+                const targetId = option.href.replace('#', '');
+                const el = document.getElementById(targetId);
+                if (el) {
+                  window.scrollTo({ behavior: 'smooth' });
+                }
+              }}
+              href="#contact" className="py-2 px-4 flex justify-center items-center rounded-md font-medium border-2 text-white">Book Me</a>
+            <a
+              onClick={e => {
+                e.preventDefault();
+                const option = { href: "#performance" };
+                const targetId = option.href.replace('#', '');
+                const el = document.getElementById(targetId);
+                if (el) {
+                  window.scrollTo({ behavior: 'smooth' });
+                }
+              }}
+              href="#performance" className="py-2 px-4 flex justify-center items-center rounded-md bg-[#FFD166] font-medium text-white">Watch Performance</a>
           </div>
         </div>
         <div className="w-full md:w-1/2 h-screen md:flex justify-center items-center hidden">

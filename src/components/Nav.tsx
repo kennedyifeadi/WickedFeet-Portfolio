@@ -23,7 +23,7 @@ export const Nav = () => {
 
     return (
         <nav
-            className={`w-full fixed top-0 z-50 transition-colors duration-300 ${scrolled ? "bg-white" : "bg-transparent"}`}
+            className={`w-full fixed top-0 z-50 transition-colors duration-300 ${scrolled ? "bg-white" : "bg-black md:bg-transparent"}`}
         >
             <div className="flex items-center justify-between px-4 md:px-8 py-4">
                 <div
@@ -32,7 +32,6 @@ export const Nav = () => {
                 >
                     WickedFeet™
                 </div>
-                {/* Desktop Nav */}
                 <div className="hidden md:flex gap-4 items-center">
                     <div>
                         {navOptions.map((option) => (
@@ -46,7 +45,9 @@ export const Nav = () => {
                                     const targetId = option.href.replace('#', '');
                                     const el = document.getElementById(targetId);
                                     if (el) {
-                                        window.scrollTo({behavior: 'smooth' });
+                                        const navHeight = document.querySelector('nav')?.offsetHeight || 0;
+                                        const y = el.getBoundingClientRect().top + window.pageYOffset - navHeight;
+                                        window.scrollTo({ top: y, behavior: 'smooth' });
                                     }
                                 }}
                             >
@@ -54,21 +55,18 @@ export const Nav = () => {
                             </a>
                         ))}
                     </div>
-                    <span 
-                        id="contact"
+                    <a href="mailto:Lolufefs@gmail.com"
                         className={`py-2 px-4 flex justify-center items-center rounded-md bg-[#FFD166] font-medium text-white`}
                     >
                         Book Me
-                    </span>
+                    </a>
                 </div>
-                {/* Hamburger Icon for Mobile */}
                 <button className="md:hidden text-2xl" onClick={() => setMenuOpen(!menuOpen)}>
                     <FiMenu className={scrolled ? "text-[#0D0D0D]" : "text-white"} />
                 </button>
             </div>
-            {/* Mobile Menu */}
             {menuOpen && (
-                <div className={`md:hidden w-full px-4 pb-4 flex flex-col gap-2 ${scrolled ? "bg-white" : "bg-transparent"} transition-all duration-300`}>
+                <div className={`md:hidden w-full px-4 pb-4 flex flex-col gap-2 ${scrolled ? "bg-white" : "bg-black"} transition-all duration-300`}>
                     {navOptions.map((option) => (
                         <a
                             key={option.name}
@@ -89,11 +87,11 @@ export const Nav = () => {
                             {option.name}
                         </a>
                     ))}
-                    <span
+                    <a href="mailto:Lolufefs@gmail.com"
                         className={`w-full py-3 mt-2 flex justify-center items-center rounded-md bg-[#FFD166] font-medium text-white`}
                     >
                         Book Me
-                    </span>
+                    </a>
                 </div>
             )}
         </nav>

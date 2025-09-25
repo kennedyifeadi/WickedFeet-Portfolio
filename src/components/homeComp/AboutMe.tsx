@@ -29,6 +29,7 @@ export const AboutMe = () => {
           loop
           muted
           playsInline
+          preload="auto"
           onMouseEnter={() => {
             if (!/Mobi|Android/i.test(navigator.userAgent)) {
               videoRef.current?.play();

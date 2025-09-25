@@ -3,9 +3,9 @@ import { Nav } from "../components/Nav"
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="flex flex-col min-h-screen relative" style={{ fontFamily: "'Poppins', sans-serif" }}>
+    <div className="flex flex-col min-h-screen relative h-max" style={{ fontFamily: "'Poppins', sans-serif" }}>
       <Nav />
-      <div>
+      <div className="h-max">
         {children}
       </div>
       <Footer />

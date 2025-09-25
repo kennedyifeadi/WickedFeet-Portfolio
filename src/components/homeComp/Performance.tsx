@@ -71,7 +71,7 @@ export const Performance = () => {
 
         <div
           ref={scrollContainer}
-          className="flex gap-6 overflow-x-scroll scrollbar-hide scroll-smooth px-10"
+          className="flex gap-6 overflow-x-scroll scrollbar-hide scroll-smooth md:px-10"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {performances.map((perf) => (
@@ -95,7 +95,7 @@ export const Performance = () => {
                 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300" />
                 
-                <div className="absolute inset-0 flex flex-col items-center justify-center text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-center md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
                   <div className="bg-white/20 backdrop-blur-sm rounded-full p-4 mb-4 transform scale-90 group-hover:scale-100 transition-transform duration-300">
                     <Play className="text-white text-2xl ml-1" />
                   </div>

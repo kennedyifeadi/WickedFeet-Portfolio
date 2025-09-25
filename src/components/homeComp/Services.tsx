@@ -76,6 +76,7 @@ export const Services = () => {
             muted
             loop
             playsInline
+            preload="auto"
           >
             <source src={ServiceVid} type="video/mp4" />
           </video>

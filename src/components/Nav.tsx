@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+// import { Link } from "react-router-dom"
 import { useEffect, useState } from "react"
 import { FiMenu } from "react-icons/fi"
 
@@ -6,8 +6,11 @@ export const Nav = () => {
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
     const navOptions = [
-        { name: "Home", path: "/" },
-        { name: "About", path: "/about" },
+        { name: "Home", href: "#home" },
+        { name: "About", href: "#about" },
+        { name: "Services", href: "#services" },
+        { name: "Performance", href: "#performance" },  
+        { name: "Contact", href: "#contact" },
     ];
 
     useEffect(() => {
@@ -33,13 +36,24 @@ export const Nav = () => {
                 <div className="hidden md:flex gap-4 items-center">
                     <div>
                         {navOptions.map((option) => (
-                            <Link
+                            <a
                                 key={option.name}
-                                to={option.path}
+                                href={option.href}
                                 className={`mx-2 ${scrolled ? "text-[#0D0D0D]" : "text-white"}`}
+                                onClick={e => {
+                                    e.preventDefault();
+                                    setMenuOpen(false);
+                                    const targetId = option.href.replace('#', '');
+                                    const el = document.getElementById(targetId);
+                                    if (el) {
+                                        const navHeight = document.querySelector('nav')?.offsetHeight || 0;
+                                        const y = el.getBoundingClientRect().top + window.pageYOffset - navHeight;
+                                        window.scrollTo({ top: y, behavior: 'smooth' });
+                                    }
+                                }}
                             >
                                 {option.name}
-                            </Link>
+                            </a>
                         ))}
                     </div>
                     <span
@@ -57,14 +71,24 @@ export const Nav = () => {
             {menuOpen && (
                 <div className={`md:hidden w-full px-4 pb-4 flex flex-col gap-2 ${scrolled ? "bg-white" : "bg-transparent"} transition-all duration-300`}>
                     {navOptions.map((option) => (
-                        <Link
+                        <a
                             key={option.name}
-                            to={option.path}
+                            href={option.href}
                             className={`py-2 border-b border-gray-200 ${scrolled ? "text-[#0D0D0D]" : "text-white"}`}
-                            onClick={() => setMenuOpen(false)}
+                            onClick={e => {
+                                e.preventDefault();
+                                setMenuOpen(false);
+                                const targetId = option.href.replace('#', '');
+                                const el = document.getElementById(targetId);
+                                if (el) {
+                                    const navHeight = document.querySelector('nav')?.offsetHeight || 0;
+                                    const y = el.getBoundingClientRect().top + window.pageYOffset - navHeight;
+                                    window.scrollTo({ top: y, behavior: 'smooth' });
+                                }
+                            }}
                         >
                             {option.name}
-                        </Link>
+                        </a>
                     ))}
                     <span
                         className={`w-full py-3 mt-2 flex justify-center items-center rounded-md bg-[#FFD166] font-medium text-white`}

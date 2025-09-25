@@ -56,7 +56,7 @@ export const Performance = () => {
   }
 
   return (
-    <section className="relative w-full min-h-screen bg-black text-white py-20 px-6">
+    <section id="performance" className="relative w-full min-h-screen bg-black text-white py-20 px-6">
       <h2 className="text-center text-3xl font-bold mb-12 uppercase">
         Performances & Portfolio
       </h2>

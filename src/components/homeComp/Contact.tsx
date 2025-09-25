@@ -41,7 +41,7 @@ export const Contact = () => {
   }
 
   return (
-    <section className="bg-black text-white px-4 py-2 h-max md:h-screen">
+    <section id="contact" className="bg-black text-white px-4 py-2 h-max md:h-screen">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         <motion.div
           initial={{ opacity: 0, x: -50 }}

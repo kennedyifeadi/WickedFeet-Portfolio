@@ -12,7 +12,7 @@ export const Landing = ({ scrollYProgress }: { scrollYProgress: MotionValue<numb
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.95])
   const images = [image1, image2, image3, image4, image5, Dancer1];
   return (
-    <motion.div style={{ scale }} className="w-full min-h-screen sticky top-0" >
+    <motion.div id="home" style={{ scale }} className="w-full min-h-screen sticky top-0" >
       <img src={Dancer1} alt="Dancer" className="w-full h-full object-cover absolute top-0 left-0" />
       <div className="absolute top-0 left-0 w-full h-full bg-black/90 flex flex-col gap-8 md:gap-0 md:flex-row px-4">
         <div className="flex flex-col justify-center items-center w-full md:w-1/2 mt-20 md:mt-0">
@@ -21,7 +21,7 @@ export const Landing = ({ scrollYProgress }: { scrollYProgress: MotionValue<numb
             <p className="text-[#CCCCCC]">Telling stories through dance</p>
           </div>
           <div className="flex gap-4 md:gap-8 justify-center w-full">
-            <span className="py-2 px-4 flex justify-center items-center rounded-md font-medium border-2 text-[#06D6A0]">Book Me</span>
+            <span className="py-2 px-4 flex justify-center items-center rounded-md font-medium border-2 text-white">Book Me</span>
             <span className="py-2 px-4 flex justify-center items-center rounded-md bg-[#FFD166] font-medium text-white">Watch Performance</span>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import { FaTiktok, FaYoutube, FaInstagram } from "react-icons/fa";
 import { FaEnvelope } from "react-icons/fa6";
 
-export default function Footer() {
+export const Footer = () => {
   return (
     <footer className="bg-black text-gray-400 py-8 px-6">
       <div className="max-w-6xl mx-auto flex flex-col items-center gap-6">

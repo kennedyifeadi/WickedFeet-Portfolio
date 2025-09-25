@@ -21,7 +21,7 @@ export const AboutMe = () => {
   };
 
   return (
-    <div className="h-screen w-full relative z-10 bg-white flex flex-col md:flex-row">
+    <div id="about" className="h-screen w-full relative z-10 bg-white flex flex-col md:flex-row">
       <div className="flex-1 h-[40%] md:h-full flex justify-center items-center relative">
         <video
           ref={videoRef}

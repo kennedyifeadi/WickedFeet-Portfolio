@@ -59,7 +59,7 @@ export const Services = () => {
   }
 
   return (
-    <section className="w-full bg-white px-6 h-[120dvh] md:h-[200dvh] flex flex-col sticky">
+    <section id="services" className="w-full bg-white px-6 h-[120dvh] md:h-[200dvh] flex flex-col sticky">
       <h2 className="text-center text-3xl font-bold mb-10 uppercase">About My Services</h2>
 
       <div className="flex flex-col gap-2 md:gap-8 h-[95%]">

@@ -21,10 +21,10 @@ export const Contact = () => {
     if (form.current) {
       emailjs
         .sendForm(
-          "your_service_id", // replace with your EmailJS service ID
-          "your_template_id", // replace with your EmailJS template ID
+          "service_z5rwee1", // replace with your EmailJS service ID
+          "template_rm5d6ta", // replace with your EmailJS template ID
           form.current,
-          "your_public_key" // replace with your EmailJS public key
+          "lQr-c2qYEnakJ6sgF" // replace with your EmailJS public key
         )
         .then(
           () => {
@@ -67,14 +67,14 @@ export const Contact = () => {
           <form ref={form} onSubmit={sendEmail} className="flex flex-col gap-4">
             <input
               type="text"
-              name="user_name"
+              name="name"
               placeholder="Your Name"
               required
               className="p-3 rounded-md bg-gray-900 border border-gray-700 focus:outline-none focus:border-[#FFD166]"
             />
             <input
               type="email"
-              name="user_email"
+              name="email"
               placeholder="Your Email"
               required
               className="p-3 rounded-md bg-gray-900 border border-gray-700 focus:outline-none focus:border-[#FFD166]"
@@ -92,7 +92,7 @@ export const Contact = () => {
               disabled={loading}
               className="bg-[#FFD166] text-white py-3 px-6 rounded-md font-semibold hover:bg-[#e6ba5d] transition-colors disabled:opacity-50"
             >
-              {loading ? "Sending..." : "Send Message"}
+              {loading ? <span className="spinner-border animate-spin inline-block w-4 h-4 border-4 rounded-full border-t-transparent"></span> : "Send Message"}
             </button>
           </form>
 

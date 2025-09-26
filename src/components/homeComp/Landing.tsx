@@ -21,7 +21,7 @@ export const Landing = ({ scrollYProgress }: { scrollYProgress: MotionValue<numb
             <p className="text-[#CCCCCC]">Telling stories through dance</p>
           </div>
           <div className="flex gap-4 md:gap-8 justify-center w-full">
-            <a href="mailto:Lolufefs@gmail.com" className="py-2 px-4 flex justify-center items-center rounded-md font-medium border-2 text-white">Book Me</a>
+            <a href="mailto:Lolufefs@gmail.com" className="py-2 px-4 flex justify-center items-center rounded-md font-medium border-2 text-green-400">Book Me</a>
             <a
               onClick={e => {
                 e.preventDefault();

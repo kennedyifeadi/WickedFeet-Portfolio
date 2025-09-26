@@ -1,4 +1,3 @@
-// import { Link } from "react-router-dom"
 import { useEffect, useState } from "react"
 import { FiMenu } from "react-icons/fi"
 
@@ -15,15 +14,20 @@ export const Nav = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            setScrolled(window.scrollY > 500);
+            if (window.scrollY < 500) {
+                setScrolled(false);
+            } else if (window.scrollY > 500 && window.scrollY < 3000) {
+                setScrolled(true);
+            } else if (window.scrollY >= 1500) {
+                setScrolled(false);
+            }
         };
         window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
     return (
         <nav
-            className={`w-full fixed top-0 z-50 transition-colors duration-300 ${scrolled ? "bg-white" : "bg-black md:bg-transparent"}`}
+            className={`w-full fixed top-0 z-50 transition-colors duration-500 ${scrolled ? "bg-white" : "bg-black"}`}
         >
             <div className="flex items-center justify-between px-4 md:px-8 py-4">
                 <div

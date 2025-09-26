@@ -1,4 +1,3 @@
-"use client"
 import { useState, useEffect, useRef } from "react"
 import { motion } from "framer-motion"
 import Dancer1 from "../../assets/Dancer1.jpg"

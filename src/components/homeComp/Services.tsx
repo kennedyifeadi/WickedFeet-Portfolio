@@ -85,7 +85,7 @@ export const Services = () => {
           </video>
 
           {!isPlaying && (
-            <div className="absolute inset-0 flex items-center justify-center">
+            <div className="absolute inset-0 hidden md:flex items-center justify-center">
               <div className="bg-black/50 rounded-full p-5 text-white text-3xl">
                 <FaPlay />
               </div>
@@ -104,7 +104,7 @@ export const Services = () => {
           )}
         </div>
 
-        <div className="w-full relative h-[210dvh] md:h-[210dvh] flex flex-col">
+        <div className="w-full relative min-h-[210dvh] md:h-[210dvh] flex flex-col">
           <div className="w-full h-[110dvh] md:h-[110dvh] pb-16 md:pb-32 sticky top-0 flex px-6 flex-col-reverse md:flex-row gap-2 md:gap-8">
           <div className="relative rounded-xl overflow-hidden h-[60%] md:h-full flex-1">
             <motion.img

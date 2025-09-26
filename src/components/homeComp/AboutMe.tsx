@@ -8,7 +8,7 @@ export const AboutMe = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const isMobile = /Mobi|Android/i.test(navigator.userAgent);
-  
+
   const handlePlay = () => {
     if (videoRef.current) {
       if (isPlaying) {
@@ -52,7 +52,7 @@ export const AboutMe = () => {
         {!isPlaying && (
           <button
             onClick={handlePlay}
-            className="absolute flex justify-center items-center bg-black/50 rounded-full p-6 cursor-pointer"
+            className="absolute hidden md:flex justify-center items-center bg-black/50 rounded-full p-6 cursor-pointer"
           >
             <FaPlay className="w-10 h-10 text-white" />
           </button>

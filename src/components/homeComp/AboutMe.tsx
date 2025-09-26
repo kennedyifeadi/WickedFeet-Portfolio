@@ -7,7 +7,8 @@ import Dancervid from "../../assets/Dancervid.mp4";
 export const AboutMe = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
-
+  const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+  
   const handlePlay = () => {
     if (videoRef.current) {
       if (isPlaying) {
@@ -30,6 +31,7 @@ export const AboutMe = () => {
           muted
           playsInline
           preload="auto"
+          autoPlay={isMobile} // i want it that if it is on mobile it autoplay
           onMouseEnter={() => {
             if (!/Mobi|Android/i.test(navigator.userAgent)) {
               videoRef.current?.play();

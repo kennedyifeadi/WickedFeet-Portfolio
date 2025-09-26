@@ -37,6 +37,7 @@ export const Services = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
   const videoRef = useRef<HTMLVideoElement>(null)
   const [isPlaying, setIsPlaying] = useState(false)
+  const isMobile = /Mobi|Android/i.test(navigator.userAgent);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -73,11 +74,12 @@ export const Services = () => {
         >
           <video
             ref={videoRef}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover rounded-xl"
             muted
             loop
             playsInline
             preload="auto"
+            autoPlay={isMobile} // i want it that if it is on mobile it autoplay
           >
             <source src={ServiceVid} type="video/mp4" />
           </video>
@@ -94,7 +96,7 @@ export const Services = () => {
             <motion.div
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
-              className="absolute bottom-0 md:bottom-4 md:left-4 text-white bg-black/40 px-2 md:px-4 py-3 rounded-md max-w-lvh"
+              className="absolute bottom-0 md:bottom-4 md:left-4 text-white bg-black/40 px-2 w-[300px] md:px-4 py-3 rounded-md md:max-w-lvh"
             >
               <h3 className="text-md md:text-3xl font-bold">Choreography</h3>
               <p className="text-[10px] md:text-sm mt-2 leading-snug">{SUBTEXTS.choreography}</p>

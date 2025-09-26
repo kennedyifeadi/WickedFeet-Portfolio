@@ -10,6 +10,7 @@ import image5 from "../../assets/Dancer6.jpg"
 
 import ServiceVid from "../../assets/Dancervid2.mp4"
 import { FaPlay } from "react-icons/fa6";
+import { Performance } from "./Performance"
 
 const rotatingImages = [
   Dancer1,
@@ -59,13 +60,13 @@ export const Services = () => {
   }
 
   return (
-    <section id="services" className="w-full bg-white px-6 h-[120dvh] md:h-[200dvh] flex flex-col sticky">
+    <section id="services" className="w-full bg-white h-max flex flex-col sticky">
       <h2 className="text-center text-3xl font-bold mb-10 uppercase">About My Services</h2>
 
-      <div className="flex flex-col gap-2 md:gap-8 h-[95%]">
+      <div className="flex flex-col gap-2 md:gap-8">
         {/* Video block */}
         <div
-          className="relative rounded-xl overflow-hidden w-full md:h-[45%]"
+          className="relative rounded-xl overflow-hidden px-6 w-full md:h-[60dvh]"
           onMouseEnter={handlePlay}
           onMouseLeave={handlePause}
           onClick={handlePlay} // for mobile tap
@@ -101,8 +102,8 @@ export const Services = () => {
           )}
         </div>
 
-        {/* Image grid */}
-        <div className="w-full h-[55%] flex flex-col-reverse md:flex-row gap-2 md:gap-8">
+        <div className="w-full relative h-[210dvh] md:h-[210dvh] flex flex-col">
+          <div className="w-full h-[110dvh] md:h-[110dvh] pb-16 md:pb-32 sticky top-0 flex px-6 flex-col-reverse md:flex-row gap-2 md:gap-8">
           <div className="relative rounded-xl overflow-hidden h-[60%] md:h-full flex-1">
             <motion.img
               key={currentIndex}
@@ -143,6 +144,8 @@ export const Services = () => {
               </div>
             </div>
           </div>
+        </div>
+        <Performance/>
         </div>
       </div>
     </section>

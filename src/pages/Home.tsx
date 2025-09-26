@@ -3,7 +3,6 @@ import withMainLayout from "../layout/MainLayout"
 import Lenis from "lenis"
 import { Landing } from "../components/homeComp/Landing"
 import { Services } from "../components/homeComp/Services"
-import { Performance } from "../components/homeComp/Performance"
 import { Contact } from "../components/homeComp/Contact"
 import { AboutMe } from "../components/homeComp/AboutMe"
 import { useScroll } from "framer-motion"
@@ -31,7 +30,6 @@ const Home = () => {
         <AboutMe />
       </div>
       <Services />
-      <Performance />
       <Contact />
     </div>
   )

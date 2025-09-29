@@ -7,7 +7,7 @@ import image3 from "../../assets/Dancer4.jpg"
 import image4 from "../../assets/Dancer5.jpg"
 import image5 from "../../assets/Dancer6.jpg"
 
-import ServiceVid from "../../assets/Dancervid2.mp4"
+import ServiceVid from "../../assets/Dancer45.mp4"
 import { FaPlay } from "react-icons/fa6";
 import { Performance } from "./Performance"
 

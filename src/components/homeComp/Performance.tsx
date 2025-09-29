@@ -1,31 +1,39 @@
 import { useState, useRef, useEffect } from "react"
 import { motion, AnimatePresence, useScroll } from "framer-motion"
 import { Play, ChevronLeft, ChevronRight, X } from "lucide-react"
+import thumbnial1 from "../../assets/DancerThumnail1.jpg"
+import thumbnial2 from "../../assets/DancerThumbnial2.jpg"
+import thumbnial3 from "../../assets/DancerThumbnial3.jpg"
+import thumbnial4 from "../../assets/Dancerthumnail4.jpg"
+import video1 from "../../assets/Dancer12.mp4"
+import video2 from "../../assets/Dancer23.mp4"
+import video3 from "../../assets/Dancer34.mp4"
+import video4 from "../../assets/Dancer45.mp4"
 
 const performances = [
   {
     id: 1,
     title: "Rio Zouk Immersion",
-    video: <iframe width="100%" height="100%" src="https://www.youtube.com/embed/xw2Wrpnt9zA" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>,
-    thumbnail: "https://img.youtube.com/vi/xw2Wrpnt9zA/maxresdefault.jpg",
+    video: video1,
+    thumbnail: thumbnial3
   },
   {
     id: 2,
     title: "Dance Showcase",
-    video: <iframe width="100%" height="100%" src="https://www.youtube.com/embed/myFr7dW3ffQ?si=qLj6Id8hoYGi182F" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>,
-    thumbnail: "https://img.youtube.com/vi/myFr7dW3ffQ/maxresdefault.jpg",
+    video: video2,
+    thumbnail: thumbnial1
   },
   {
     id: 3,
     title: "Performance Night",
-    video: <iframe width="100%" height="100%" src="https://www.youtube.com/embed/k2oJ7eO_iWM" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>,
-    thumbnail: "https://img.youtube.com/vi/k2oJ7eO_iWM/maxresdefault.jpg",
+    video: video3,
+    thumbnail: thumbnial4
   },
   {
     id: 4,
     title: "Festival Performance",
-    video: <iframe width="100%" height="100%" src="https://www.youtube.com/embed/IShimoENFJg?si=zvpmHYFJJ_Q3rKM9" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>,
-    thumbnail: "https://img.youtube.com/vi/IShimoENFJg/maxresdefault.jpg",
+    video: video4,
+    thumbnail: thumbnial2
   },
 ]
 
@@ -135,7 +143,12 @@ export const Performance = () => {
               className="relative bg-black rounded-xl shadow-lg max-w-4xl w-[90%] mx-auto"
             >
               <div className="w-full h-[60vh] rounded-lg overflow-hidden flex items-center justify-center">
-                {selectedPerformance.video}
+                <video
+                  src={selectedPerformance.video}
+                  controls
+                  autoPlay
+                  className="w-full h-full object-contain bg-black"
+                />
               </div>
               <button
                 onClick={() => setSelectedPerformance(null)}

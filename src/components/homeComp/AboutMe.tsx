@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 import { FaPlay } from "react-icons/fa6";
 
 
-import Dancervid from "../../assets/Dancervid.mp4";
+import Dancervid from "../../assets/Dancer12.mp4";
 
 export const AboutMe = () => {
   const [isPlaying, setIsPlaying] = useState(false);
